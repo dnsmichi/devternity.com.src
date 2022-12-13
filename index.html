@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html class="lt-ie9" lang="en" ng-app="devternity" ng-controller="LandingPageController">
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>🚀 DevTernity 2022 – The top developer conference.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="DevTernity">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="google-site-verification" content="b0JWvPtZAQJNl2DMy0flSRjC7xxN9g10Yhu_hSszLLw">
+    <meta name="description" content="The top developer conference. Turning developers into architects and engineering leaders since 2015.">
+    <meta name="keywords" content="software craftsmanship conferences, software development conferences, software developer conferences, developer conference, java conferences">
+    <meta name="robots" content="index,follow">
+    <meta property="og:url" content="http://devternity.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DevTernity">
+    <meta property="og:description" content="The top developer conference. Turning developers into architects and engineering leaders since 2015.">
+    <meta property="og:image" content="https://devternity.com/images/devternity-lineup-2022.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta name="theme-color" content="#1b1b1b">
+    <meta name="p:domain_verify" content="f56aab43251f5fa394e371ae54ec3d06">
+    <link rel="shortcut icon" type="image/png" href="images/logo_2019.png">
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="shortcut icon" sizes="64x64" href="/images/favicon.png"><!--[if lte IE 8]>
+    <script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-timer/1.3.3/angular-timer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/2.2.0/skel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/humanize-duration/3.12.1/humanize-duration.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skel-layers/2.2.0/skel.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script src="js/exit.js"></script>
+    <script src="js/all.js?new=newwww"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "DevTernity",
+        "url": "https://devternity.com",
+        "sameAs": ["https://twitter.com/devternity","https://www.facebook.com/devternity","https://www.linkedin.com/groups/8371335/","https://www.instagram.com/devternity","https://youtube.com/c/DevTernity","https://en.wikipedia.org/wiki/DevTernity_Conference"  ]
+      }      
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "EducationEvent",
+        "name": "DevTernity 2022 Conference",
+        "image": "http://devternity.com/images/logo_2017_filled.png",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "description": "The top developer conference",
+        "startDate": "2022-12-08T09:00",
+        "endDate": "2022-12-08T20:00",
+        "offers": {
+         "@type": "Offer",
+         "availability": "http://schema.org/InStock",
+         "price": "399",
+         "validFrom": "2018-01-01T01:01:01.001Z",
+         "url": "https://devternity.com/",
+         "priceCurrency": "EUR"
+        },
+        "performer": {
+          "@type": "Organization",
+          "name": "DevTernity",
+          "sameAs": "https://devternity.com/"
+        },
+        "location": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Online",
+            "addressRegion": "Latvia",
+            "postalCode": "",      
+            "streetAddress": ""
+          },
+          "name": "GMT (London Time)"
+        }
+      }      
+    </script>
+    <link rel="icon" type="image/png" href="https://devternity.com/images/logo_2017_filled.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="css/remodal.css">
+    <style type="text/css">
+      #devternity-loading {
+        z-index: 10001;
+        position: fixed;
+      }
+      
+      #devternity-loading div.loading-container {
+        background-color: black;
+        bottom: 0px;
+        left: 0px;
+        opacity: 1.0;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        z-index: 999999;
+      }
+      
+      #devternity-loading div.messaging {
+        color: #FFFFFF;
+        left: 0px;
+        margin-top: -37px;
+        position: absolute;
+        right: 0px;
+        text-align: center;
+        top: 50%;
+      }
+      
+    </style>
+  </head>
+  <body class="landing">
+    <div id="devternity-loading">
+      <div class="loading-container">
+        <div class="messaging">
+          <div><img src="images/logo_2017.png" alt="logo"></div>
+        </div>
+      </div>
+    </div>
+    <header id="header">
+      <nav id="nav">
+        <ul>
+          <li><a href="code_of_conduct.html" alt="Code of Conduct">CoC</a></li>
+          <li><a href="https://twitter.com/devternity" aria-label="Link to twitter"><i class="fab fa-twitter" aria-hidden></i></a></li>
+          <li><a href="https://www.facebook.com/devternity" aria-label="Link to facebook"><i class="fab fa-facebook" aria-hidden></i></a></li>
+          <li><a href="https://www.linkedin.com/groups/8371335/" aria-label="Link to linkedin"><i class="fab fa-linkedin" aria-hidden></i></a></li>
+          <li><a href="https://www.instagram.com/devternity" aria-label="Link to instagram"><i class="fab fa-instagram" aria-hidden></i></a></li>
+          <li><a href="https://youtube.com/c/DevTernity" aria-label="Link to youtube"><i class="fab fa-youtube" aria-hidden></i></a></li>
+          <li><a href="https://en.wikipedia.org/wiki/DevTernity_Conference" aria-label="Link to wikipedia-w"><i class="fab fa-wikipedia-w" aria-hidden></i></a></li>
+        </ul>
+      </nav>
+    </header><!-- Banner -->
+    <section id="banner">
+      <video id="video" autoplay loop playsinline muted>
+        <source src="images/video.mp4" type="video/mp4">
+      </video><a id="trust" href="https://itconference.top" rel="noopener"><img src="images/trustpilot.png" alt="5 stars event"></a>
+      <div class="info">
+        <div><img src="images/logo_2017.png" alt="logo">
+          <h2>&nbsp;DevTernity</h2>
+        </div>
+        <p>Turning developers into architects and engineering leaders since 2015.</p>
+        <p>8-9 December 2022. Online. <a class="timezone" style="color: white; font-size: 16px; text-decoration: none" href="https://www.worldtimebuddy.com/?pl=1&amp;lid=2643743,11&amp;h=2643743&amp;date=12/8/2022%7C3&amp;hf=0" target="_blank">Western European Time / London (GMT).</a></p>
+        <ul class="actions">
+          <li><a class="button big pulse" ng-if="embedded" href="https://devternity.com">Visit website</a><a class="button big pulse" ng-if="!embedded" ng-click="slideTo('#tickets-container')">Get tickets</a><br><br>
+            <timer ng-show="showCountdown(1670490000000)" end-time="1670490000000" max-time-unit="'month'">We start in just <strong style="color: white">{{months ? months + ' month' + monthsS + ', ' : ''}} {{days}} day{{daysS}}, {{hours}} hour{{hoursS}}, {{minutes}} minutes {{seconds}} seconds</strong></timer>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="wrapper style1 align-center">
+      <div class="container intro">
+        <header>
+          <h2></h2>
+          <p>
+             DevTernity is <strong>the top international software development conference.</strong></p>
+          <h2></h2>
+          <p>We focus on the core skills paramount to your success – coding, architecture, and leadership.</p>
+          <h2></h2>
+          <p>Start preparing for an architect, engineering leader, or CTO role today.</p>
+          <h2>
+            <p style="text-transform: uppercase">it's a must-see.</p>
+          </h2>
+          <p style="color: #ffdd57"><i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i>&nbsp;<i class="fas fa-star"></i></p>
+        </header>
+      </div>
+    </section>
+    <section class="wrapper speakers align-center" id="speakers-container">
+      <div class="container">
+        <header>
+          <h1>
+             Inspiring Talks <i class="separator fa fa-ellipsis-v"> </i> Day I, 8 Dec</h1>
+          <h2> </h2>
+          <p> <em>No Agile bullshit bingo and marketing talks permitted. See for yourself:</em></p>
+        </header>
+        <div class="row">
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/kent.png" alt="Kent Beck">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Kent Beck</div>
+            <div class="who">Creator of Extreme Programming and TDD, Author of <a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530">TDD by Example</a> and <a href="https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658">Extreme Programming Explained</a></div><a href="https://twitter.com/kentbeck" aria-label="Kent Beck Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/unclebobvec.png" alt="Robert &quot;Uncle Bob&quot; Martin">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Robert &quot;Uncle Bob&quot; Martin</div>
+            <div class="who">Master Craftsman, Author of <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>, <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Architecture</a>, <a href="https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/">The Clean Coder</a>, and <a href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164">Clean Agile</a></div><a href="https://twitter.com/unclebobmartin" aria-label="Robert &quot;Uncle Bob&quot; Martin Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/mary.png" alt="Mary Poppendieck">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Mary Poppendieck</div>
+            <div class="who">Author of <a href="https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783">Lean Software Development</a>, <a href="https://www.amazon.com/Implementing-Lean-Software-Development-Concept/dp/0321437381">Implementing Lean Software Development</a>, <a href="https://www.amazon.com/Leading-Lean-Software-Development-Results/dp/0321620704">Leading Lean Software Development</a>, and <a href="https://www.amazon.com/Lean-Mindset-Ask-Right-Questions/dp/0321896904">The Lean Mindset</a></div><a href="https://twitter.com/mpoppendieck" aria-label="Mary Poppendieck Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/venk_vec.png" alt="Venkat Subramaniam">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Venkat Subramaniam</div>
+            <div class="who">Founder @ Agile Developer, Author of <a href="https://www.amazon.com/Practices-Agile-Developer-Pragmatic-Bookshelf/dp/097451408X/">Practices of an Agile Developer</a>, <a href="https://www.amazon.com/Programming-Concurrency-JVM-Mastering-Synchronization-ebook/dp/B00A32NZEI/">Programming Concurrency on the JVM</a>, <a href="https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/">Functional Programming in Java</a></div><a href="https://twitter.com/venkat_s" aria-label="Venkat Subramaniam Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/kevie.png" alt="Kevlin Henney">
+            <div class="whoname"><img class="lazy" data-src="images/flags/gb.svg" alt="gb flag" style="height: 13px"> Kevlin Henney</div>
+            <div class="who">Consultant, Trainer, Writer, Editor of <a href="https://www.amazon.com/Things-Every-Programmer-Should-Know/dp/0596809484/">97 Things Every Programmer Should Know</a></div><a href="https://twitter.com/kevlinhenney" aria-label="Kevlin Henney Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/jb_vec.png" alt="J.B. Rainsberger">
+            <div class="whoname"><img class="lazy" data-src="images/flags/ca.svg" alt="ca flag" style="height: 13px"> J.B. Rainsberger</div>
+            <div class="who">Software Coach, Mentor and Consultant, TDD Trainer <a href="https://tdd.training">tdd.training</a></div><a href="https://twitter.com/jbrains" aria-label="J.B. Rainsberger Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/pilo.png" alt="Jakub Pilimon">
+            <div class="whoname"><img class="lazy" data-src="images/flags/pl.svg" alt="pl flag" style="height: 13px"> Jakub Pilimon</div>
+            <div class="who">Principal Technologist @ VMWare, Trainer @ Bottega IT Minds, DZone's Most-Valuable Blogger</div><a href="https://twitter.com/jakubpilimon" aria-label="Jakub Pilimon Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/hanselman.png" alt="Scott Hanselman">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Scott Hanselman</div>
+            <div class="who">Principal Community Architect for Web Platform @ Microsoft, Blogger, Podcaster</div><a href="https://twitter.com/shanselman" aria-label="Scott Hanselman Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/randy_150x150.png" alt="Randy Shoup">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Randy Shoup</div>
+            <div class="who">VP Engineering and Chief Architect @ eBay, ex-Director of Engineering @ Google</div><a href="https://twitter.com/randyshoup" aria-label="Randy Shoup Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/jnb_vec.png" alt="Jakub Nabrdalik">
+            <div class="whoname"><img class="lazy" data-src="images/flags/pl.svg" alt="pl flag" style="height: 13px"> Jakub Nabrdalik</div>
+            <div class="who">Solution Architect, Developer and Mentor at Bottega IT Minds, ex-Head of Software Development @ 4Finance</div><a href="https://twitter.com/jnabrdalik" aria-label="Jakub Nabrdalik Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/viktor_small.png" alt="Victor Rentea">
+            <div class="whoname"><img class="lazy" data-src="images/flags/ro.svg" alt="ro flag" style="height: 13px"> Victor Rentea</div>
+            <div class="who">Software Craftsman, Java Champion, and Independent Technical Trainer</div><a href="https://twitter.com/VictorRentea" aria-label="Victor Rentea Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/inta_150x150.png" alt="Natalie Stadler">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Natalie Stadler</div>
+            <div class="who">Software Craftswoman @ Coinbase, Author @ The Practical Dev</div>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/gojkoo.png" alt="Gojko Adžić">
+            <div class="whoname"><img class="lazy" data-src="images/flags/rs.svg" alt="rs flag" style="height: 13px"> Gojko Adžić</div>
+            <div class="who">Consultant, Trainer, Author of <a href="https://www.amazon.com/Running-Serverless-Introduction-Lambda-Application/dp/0993088155">Running Serverless</a>, <a href="https://www.amazon.com/Specification-Example-Successful-Deliver-Software/dp/1617290084">Specification by Example</a>, <a href="https://www.amazon.com/Impact-Mapping-software-products-projects-ebook/dp/B009KWDKVA">Impact Mapping</a>, Founder of <a href="https://narakeet.com/create/video-as-code.html">Narakeet</a></div><a href="https://twitter.com/gojkoadzic" aria-label="Gojko Adžić Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/judis.png" alt="Stefan Judis">
+            <div class="whoname"><img class="lazy" data-src="images/flags/de.svg" alt="de flag" style="height: 13px"> Stefan Judis</div>
+            <div class="who">Head of Developer Relations @ Checkly, Teaching <a href="https://twitter.com/CSSclasses">@CSSclasses</a>, Maintaining <a href="https://twitter.com/perf_tooling">@perf_tooling</a></div><a href="https://twitter.com/stefanjudis" aria-label="Stefan Judis Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/sandro_vec.png" alt="Sandro Mancuso">
+            <div class="whoname"><img class="lazy" data-src="images/flags/gb.svg" alt="gb flag" style="height: 13px"> Sandro Mancuso</div>
+            <div class="who">Software Craftsman and Founder @ Codurance, Author of <a href="https://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501">The Software Craftsman</a></div><a href="https://twitter.com/sandromancuso" aria-label="Sandro Mancuso Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/sveta_vec.png" alt="Julia Kirsina">
+            <div class="whoname"><img class="lazy" data-src="images/flags/lv.svg" alt="lv flag" style="height: 13px"> Julia Kirsina</div>
+            <div class="who">Technical Lead, Tech Influencer @ Instagram</div><a href="https://twitter.com/UnicornCoding" aria-label="Julia Kirsina Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/cory_150x150.png" alt="Cory House">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Cory House</div>
+            <div class="who">Founder @ <a href="https://www.reactjsconsulting.com">ReactJS Consulting</a>, Software Developer, Author, Speaker, Consultant, Teacher</div><a href="https://twitter.com/housecor" aria-label="Cory House Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/jimbo.png" alt="Jimmy Bogard">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Jimmy Bogard</div>
+            <div class="who">Chief Architect @ Headspring, Microsoft MVP, Creator of <a href="https://github.com/AutoMapper/AutoMapper">AutoMapper</a></div><a href="https://twitter.com/jbogard" aria-label="Jimmy Bogard Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/dneal.png" alt="David Neal">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> David Neal</div>
+            <div class="who">Principal Developer Evangelist @ Pluralsight, Microsoft MVP</div><a href="https://twitter.com/reverentgeek" aria-label="David Neal Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/scott_vec.png" alt="Scott Wlaschin">
+            <div class="whoname"><img class="lazy" data-src="images/flags/gb.svg" alt="gb flag" style="height: 13px"> Scott Wlaschin</div>
+            <div class="who">Software Architect, F# Trainer, Author of <a href="https://pragprog.com/book/swdddf/domain-modeling-made-functional">Domain Modeling Made Functional</a></div><a href="https://twitter.com/scottwlaschin" aria-label="Scott Wlaschin Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/gwen_150x150.png" alt="Gwen Shapira">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Gwen Shapira</div>
+            <div class="who">Chief Product Officer @ Stealth Startup, ex-Engineering Leader @ Confluent, Author of <a href="https://www.amazon.com/Kafka-Definitive-Real-Time-Stream-Processing/dp/1491936169">Kafka: The Definitive Guide</a></div><a href="https://twitter.com/gwenshap" aria-label="Gwen Shapira Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/raisin_150x150.png" alt="Dave Rensin">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Dave Rensin</div>
+            <div class="who">Senior Director of Engineering @ Google</div><a href="https://twitter.com/drensin" aria-label="Dave Rensin Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+          <section class="feature 3u 12u$(small)"><img class="lazy headshot" data-src="images/allenvector.png" alt="Allen Holub">
+            <div class="whoname"><img class="lazy" data-src="images/flags/us.svg" alt="us flag" style="height: 13px"> Allen Holub</div>
+            <div class="who">Principal @ Hollub Associates Ltd, Pluralsight Author, Author of <a href="https://www.oreilly.com/library/view/design-patterns-in/9781491935828/">Design Patterns in the Real World</a> course</div><a href="https://twitter.com/allenholub" aria-label="Allen Holub Twitter account"><i class="fab fa-twitter follow-speaker" aria-hidden="true"></i></a>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="wrapper" id="program-container">
+      <div class="container">
+        <div class="row header">
+          <section class="align-center feature 4u"><span class="fa-layers fa-2x"><i class="fa fa-circle"></i><strong class="fa-layers-text fa-inverse" data-fa-transform="shrink-7">1</strong></span> Track</section>
+          <section class="align-center feature 4u"><span class="fa-layers fa-2x"><i class="fa fa-circle"></i><strong class="fa-layers-text fa-inverse" data-fa-transform="shrink-7">2</strong></span> Track</section>
+          <section class="align-center feature 4u"><span class="fa-layers fa-2x"><i class="fa fa-circle"></i><strong class="fa-layers-text fa-inverse" data-fa-transform="shrink-7">3</strong></span> Track</section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">9:00<br><a class="pointer" ng-click="popupSpeech(1)"> Kevlin Henney<br><strong>Code?</strong></a><br><span>#code #testing #quality                              </span>
+          </section>
+          <section class="align-center feature 4u">9:00<br><a class="pointer" ng-click="popupSpeech(2)"> Randy Shoup<br><strong>Improving eBay's Development Velocity</strong></a><br><span>#architecture #continuous delivery #case study                              </span>
+          </section>
+          <section class="align-center feature 4u">9:00<br><a class="pointer" ng-click="popupSpeech(3)"> Jakub Nabrdalik<br><strong>Simple and Powerful Things That Work for Me</strong></a><br><span>#game changers #thinking #productivity                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">9:50<br><span>Coffee Break</span>
+          </section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">10:10<br><a class="pointer" ng-click="popupSpeech(5)"> Victor Rentea<br><strong>The Secrets of the Fastest Java Developers on Earth</strong></a><br><span>#productivity #intellij #java                              </span>
+          </section>
+          <section class="align-center feature 4u">10:10<br><a class="pointer" ng-click="popupSpeech(7)"> Jakub Pilimon<br><strong>Clean Code: Eternal Principles</strong></a><br><span>#clean code #patterns #best practices                              </span>
+          </section>
+          <section class="align-center feature 4u">10:10<br><a class="pointer" ng-click="popupSpeech(8)"> Gojko Adžić<br><strong>Maximum Impact, Minimum Effort</strong></a><br><span>#effectiveness #agility #impact mapping                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">11:00<br><span>Coffee Break</span>
+          </section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">11:20<br><a class="pointer" ng-click="popupSpeech(10)"> Venkat Subramaniam<br><strong>Reasons and Ways to Improve Code Quality</strong></a><br><span>#clean code #code design #patterns                              </span>
+          </section>
+          <section class="align-center feature 4u">11:20<br><a class="pointer" ng-click="popupSpeech(11)"> Stefan Judis<br><strong>Everything You Should Know About Web Development in 2022</strong></a><br><span>#tools #libraries #best practices                              </span>
+          </section>
+          <section class="align-center feature 4u">11:20<br><a class="pointer" ng-click="popupSpeech(12)"> Sandro Mancuso<br><strong>Minimum Viable Professional</strong></a><br><span>#software craftsmanship #professionalism #discussion                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">12:10<br><span>Coffee Break</span>
+          </section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">13:10<br><a class="pointer" ng-click="popupSpeech(15)"> Cory House<br><strong>The 7 Pillar Developer: A Holistic Approach to Building an Exceptional Career</strong></a><br><span>#career #advice #programmer's life                              </span>
+          </section>
+          <section class="align-center feature 4u">13:10<br><a class="pointer" ng-click="popupSpeech(16)"> Jimmy Bogard<br><strong>Effective Microservice Communication and Conversation Patterns</strong></a><br><span>#architecture #microservices #patterns                              </span>
+          </section>
+          <section class="align-center feature 4u">13:10<br><a class="pointer" ng-click="popupSpeech(17)"> David Neal<br><strong>Practical Leadership for Software Developers</strong></a><br><span>#leadership #motivation #soft skills                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">14:00<br><span>Coffee Break</span>
+          </section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">14:20<br><a class="pointer" ng-click="popupSpeech(19)"> Robert &quot;Uncle Bob&quot; Martin<br><strong>Clean Architecture – A Craftsman's Guide to Software Structure</strong></a><br><span>#architecture #design #modularity                              </span>
+          </section>
+          <section class="align-center feature 4u">14:20<br><a class="pointer" ng-click="popupSpeech(20)"> Scott Wlaschin<br><strong>Domain Modeling Made Functional</strong></a><br><span>#design patterns #functional programming #domain-driven design                              </span>
+          </section>
+          <section class="align-center feature 4u">14:20<br><a class="pointer" ng-click="popupSpeech(21)"> Mary Poppendieck<br><strong>The Future of Software Engineering</strong></a><br><span>#software engineering #history #future                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">15:10<br><span>Coffee Break</span>
+          </section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">15:30<br><a class="pointer" ng-click="popupSpeech(23)"> J.B. Rainsberger<br><strong>Unlocking the Awesome Power of Refactoring</strong></a><br><span>#testing #test-driven-development #software design                              </span>
+          </section>
+          <section class="align-center feature 4u">15:30<br><a class="pointer" ng-click="popupSpeech(24)"> Gwen Shapira<br><strong>Beyond Microservices: Streams, State and Scalability</strong></a><br><span>#microservices #architecture #best practices                              </span>
+          </section>
+          <section class="align-center feature 4u">15:30<br><a class="pointer" ng-click="popupSpeech(25)"> Dave Rensin<br><strong>Engineering Management: The Missing Manual</strong></a><br><span>#tech leadership #management #how-to guide                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">16:20<br><span>Coffee Break</span>
+          </section>
+        </div>
+        <div class="evt row odd">
+          <section class="align-center feature 4u">16:40<br><a class="pointer" ng-click="popupSpeech(27)"> Kent Beck<br><strong>Extreme Programming — 25 Years Later</strong></a><br><span>#extreme programming #engineering practices #test-driven development                              </span>
+          </section>
+          <section class="align-center feature 4u">16:40<br><a class="pointer" ng-click="popupSpeech(28)"> Scott Hanselman<br><strong>Building Careers with Empathy</strong></a><br><span>#career advice #growth #skills                              </span>
+          </section>
+          <section class="align-center feature 4u">16:40<br><a class="pointer" ng-click="popupSpeech(29)"> Allen Holub<br><strong>26 Heuristics for Effective Software Development</strong></a><br><span>#agility #craftsmanship #extreme programming                              </span>
+          </section>
+        </div>
+        <div class="evt row even">
+          <section class="align-center feature 12u">17:30<br><span>Success!</span>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="1">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/kevie.png" alt="speaker headshot">
+                <p class="speaker-bio">Consultant, Trainer, Writer, Editor of <a href="https://www.amazon.com/Things-Every-Programmer-Should-Know/dp/0596809484/">97 Things Every Programmer Should Know</a></p>
+              </div>
+              <p class="whoname"><em>Code?</em></p>
+              <p class="speaker">In this session, Kevlin will explore what we do and do not mean by code, and the consequences for development and our systems. Some developers do not consider their unit tests to be proper code, because unit tests are not shipped with the software. On the other hand, many developers do not consider configuration to be code, even though it is shipped with the software, defines how the software executes and is written in a formal notation. And imagine deploying a system with millions and millions of configuration parameters that none of the developers understood or knew how to test properly? Imagine machine learning. This talk is a journey into code, a journey into testing, a journey into quality and a journey into keeping software soft. There's no need to make it harder than it already is.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="2">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/randy_150x150.png" alt="speaker headshot">
+                <p class="speaker-bio">VP Engineering and Chief Architect @ eBay, ex-Director of Engineering @ Google</p>
+              </div>
+              <p class="whoname"><em>Improving eBay's Development Velocity</em></p>
+              <p class="speaker">This session outlines eBay’s efforts towards better, faster, safer, and continious software delivery. You'll learn about measuring software delivery, reducing waiting times and improving flow, breaking down silos, removing impediments, embedding experts directly in product teams, modernizing architecture, and much more! This session will provide actionable insights for other organizations going through similar journeys.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="3">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/jnb_vec.png" alt="speaker headshot">
+                <p class="speaker-bio">Solution Architect, Developer and Mentor at Bottega IT Minds, ex-Head of Software Development @ 4Finance</p>
+              </div>
+              <p class="whoname"><em>Simple and Powerful Things That Work for Me</em></p>
+              <p class="speaker">There's a surprising lot of best practices that are irrelevant in practice. There are also those that do not sound like much, but I use them every single day and cannot imagine how I would deal without them. This talk is about those silent game-changers. I'll talk about fixing bugs with a scientific method, how 7 years of implementing and operating microservices changed my observability practices, and how higher-order functions allowed me to not only express what's important, but also put emphasis on it. And then we'll talk a bit about neuroscience and how to deal with your own head. Perhaps it will work for you as well.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="5">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/viktor_small.png" alt="speaker headshot">
+                <p class="speaker-bio">Software Craftsman, Java Champion, and Independent Technical Trainer</p>
+              </div>
+              <p class="whoname"><em>The Secrets of the Fastest Java Developers on Earth</em></p>
+              <p class="speaker">In this session, you’ll learn a lot of hands-on tricks that will skyrocket your Java coding speed, after just several days of practice. Writing, editing, navigating and refactoring code faster will let you focus on your goals and allow you to experiment various design alternatives without wasting precious time. In this talk I’ll demonstrate some the best tricks of IntelliJ (community included): Advanced Auto-Completion: over-dot, TAB, type-aware, statics, generating boilerplate, Live Templates and Postfix Expansion, Essential quickfixes and inspections, Multi-cursor, Statement Completion, Navigating Code like a Pro, Java Streams support, and many more, all curated with the help of many nice JetBrains people.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="7">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/pilo.png" alt="speaker headshot">
+                <p class="speaker-bio">Principal Technologist @ VMWare, Trainer @ Bottega IT Minds, DZone's Most-Valuable Blogger</p>
+              </div>
+              <p class="whoname"><em>Clean Code: Eternal Principles</em></p>
+              <p class="speaker">In this talk we will cover: thinking in terms of abstractions, placing the right language in right places, fighting with cognitive load and biases, what kinds of coupling can we see and which one is the worst, how to overcome the fear of having many small classes, hot to explain cohesion to a junior developer and more. Those evergreen rules can help you become more efficient and persuasive at work.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="8">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/gojkoo.png" alt="speaker headshot">
+                <p class="speaker-bio">Consultant, Trainer, Author of <a href="https://www.amazon.com/Running-Serverless-Introduction-Lambda-Application/dp/0993088155">Running Serverless</a>, <a href="https://www.amazon.com/Specification-Example-Successful-Deliver-Software/dp/1617290084">Specification by Example</a>, <a href="https://www.amazon.com/Impact-Mapping-software-products-projects-ebook/dp/B009KWDKVA">Impact Mapping</a>, Founder of <a href="https://narakeet.com/create/video-as-code.html">Narakeet</a></p>
+              </div>
+              <p class="whoname"><em>Maximum Impact, Minimum Effort</em></p>
+              <p class="speaker">A big government IT project delivered two years ahead of schedule. A fraud detection initiative saving tens of millions more than predicted. An app that helped a city rebuild faster after a major disaster and save ten times more money than expected. Stories like these are very uncommon, even with all the advancements the software industry made in the last few decades. In this talk, Gojko will present how very successful teams create big impacts with minimum effort. You'll get practical, actionable ideas that you can use immediately in your work.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="10">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/venk_vec.png" alt="speaker headshot">
+                <p class="speaker-bio">Founder @ Agile Developer, Author of <a href="https://www.amazon.com/Practices-Agile-Developer-Pragmatic-Bookshelf/dp/097451408X/">Practices of an Agile Developer</a>, <a href="https://www.amazon.com/Programming-Concurrency-JVM-Mastering-Synchronization-ebook/dp/B00A32NZEI/">Programming Concurrency on the JVM</a>, <a href="https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/">Functional Programming in Java</a></p>
+              </div>
+              <p class="whoname"><em>Reasons and Ways to Improve Code Quality</em></p>
+              <p class="speaker">As programmers we crank out code day in and day out. In the pressure to deliver faster and to keep up with change, it's easy to forget about code quality. Over time, we may not even realize how much the code has deteriorated except that we feel the pain moving forward, as with each line of code we touch gets harder and slower to change. We will discuss the reasons to maintain good quality code and ways in which we, each one of us, can be part of creating quality code.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="11">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/judis.png" alt="speaker headshot">
+                <p class="speaker-bio">Head of Developer Relations @ Checkly, Teaching <a href="https://twitter.com/CSSclasses">@CSSclasses</a>, Maintaining <a href="https://twitter.com/perf_tooling">@perf_tooling</a></p>
+              </div>
+              <p class="whoname"><em>Everything You Should Know About Web Development in 2022</em></p>
+              <p class="speaker">Frontend and JavaScript technologies are moving fast. So fast that it's always hard to keep track of all the new things that are coming up. This talk will show new tools, workflows, ways to develop and give advice on how to stay up to date.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="12">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/sandro_vec.png" alt="speaker headshot">
+                <p class="speaker-bio">Software Craftsman and Founder @ Codurance, Author of <a href="https://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501">The Software Craftsman</a></p>
+              </div>
+              <p class="whoname"><em>Minimum Viable Professional</em></p>
+              <p class="speaker">In this session, together with Sandro we'll discuss hard and soft skills that every software craftsperson needs and how can we nurture those skills independently, at work, and as a community.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="15">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/cory_150x150.png" alt="speaker headshot">
+                <p class="speaker-bio">Founder @ <a href="https://www.reactjsconsulting.com">ReactJS Consulting</a>, Software Developer, Author, Speaker, Consultant, Teacher</p>
+              </div>
+              <p class="whoname"><em>The 7 Pillar Developer: A Holistic Approach to Building an Exceptional Career</em></p>
+              <p class="speaker">As developers, we focus on code. Yet mastering syntax alone isn't sufficient. Our behaviors away from the keyboard profoundly effect our impact and career satisfaction. So, to dramatically expand our potential as developers, we must reconsider our behaviors as a humans. In this story-oriented session, we'll explore seven surprisingly relevant facets of life that profoundly impact our software quality. </p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="16">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/jimbo.png" alt="speaker headshot">
+                <p class="speaker-bio">Chief Architect @ Headspring, Microsoft MVP, Creator of <a href="https://github.com/AutoMapper/AutoMapper">AutoMapper</a></p>
+              </div>
+              <p class="whoname"><em>Effective Microservice Communication and Conversation Patterns</em></p>
+              <p class="speaker">Orchestration or Choreography? Sagas or process manager? REST, RPC or Events? Are we just making this all up as we go along? Once we move away from a single process to many services and processes, we immediately hit the problem that our services need to communicate with each other. The architect mandated REST! But then nothing worked in production. Then came events! And nothing ever completed. In this talk we'll look at the problem from a holistic perspective - take the fundamental property of autonomy for any microservice-based architecture, and design how services should communicate so that they can still achieve their purpose in the world. We'll cover basic communication patterns, where we run into problems with them, and how advanced conversational patterns can help. Finally, we'll look at some real-world scenarios for designing complex coordination and where conversation patterns can retain our autonomy and loose coupling.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="17">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/dneal.png" alt="speaker headshot">
+                <p class="speaker-bio">Principal Developer Evangelist @ Pluralsight, Microsoft MVP</p>
+              </div>
+              <p class="whoname"><em>Practical Leadership for Software Developers</em></p>
+              <p class="speaker">Regardless of the technology you know, regardless of the job title you have, you have amazing potential to impact your workplace, community, and beyond. In this talk, I’ll share a few candid stories of my career failures… I mean… learning opportunities. We’ll start by debunking the myth that leadership == management. Next, we’ll talk about some the attributes, behaviors and skills of good leaders. Last, we’ll cover some practical steps and resources to accelerate your journey. You’ll walk away with some essential leadership skills I believe anyone can develop, and a good dose of encouragement to be more awesome!</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="19">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/unclebobvec.png" alt="speaker headshot">
+                <p class="speaker-bio">Master Craftsman, Author of <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>, <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Architecture</a>, <a href="https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/">The Clean Coder</a>, and <a href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164">Clean Agile</a></p>
+              </div>
+              <p class="whoname"><em>Clean Architecture – A Craftsman's Guide to Software Structure</em></p>
+              <p class="speaker">By applying universal rules of software architecture, you can dramatically improve developer productivity throughout the life of any software system. Now, building upon the success of his best-selling books Clean Code and The Clean Coder, legendary software craftsman Robert C. Martin reveals those rules and helps you apply them.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="20">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/scott_vec.png" alt="speaker headshot">
+                <p class="speaker-bio">Software Architect, F# Trainer, Author of <a href="https://pragprog.com/book/swdddf/domain-modeling-made-functional">Domain Modeling Made Functional</a></p>
+              </div>
+              <p class="whoname"><em>Domain Modeling Made Functional</em></p>
+              <p class="speaker">Statically typed functional programming languages encourage a very different way of thinking about types. The type system is your friend, not an annoyance, and can be used in many ways that might not be familiar to OO programmers. Types can be used to represent the domain in a fine-grained, self documenting way. And in many cases, types can even be used to encode business rules so that you literally cannot create incorrect code. You can then use the static type checking almost as an instant unit test — making sure that your code is correct at compile time. In this talk, we'll look at some of the ways you can use types as part of a domain driven design process, with some simple real world examples in F#. No jargon, no maths, and no prior F# experience necessary.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="21">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/mary.png" alt="speaker headshot">
+                <p class="speaker-bio">Author of <a href="https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783">Lean Software Development</a>, <a href="https://www.amazon.com/Implementing-Lean-Software-Development-Concept/dp/0321437381">Implementing Lean Software Development</a>, <a href="https://www.amazon.com/Leading-Lean-Software-Development-Results/dp/0321620704">Leading Lean Software Development</a>, and <a href="https://www.amazon.com/Lean-Mindset-Ask-Right-Questions/dp/0321896904">The Lean Mindset</a></p>
+              </div>
+              <p class="whoname"><em>The Future of Software Engineering</em></p>
+              <p class="speaker">Twenty years ago Google was struggling to search the vast amount of data in the web, while Amazon was struggling to move an increasing volume of transactions through its monolithic architecture. Their solutions broke new ground in software engineering even as they enabled the companies to thrive. Creative approaches to digital technology have been fundamental in enabling the massive scale and incredible speed of today’s digital giants. More than that, they are at the core of every successful digital transformation. This talk will discuss how software engineering has been changed by the scale and speed required of digital companies in the past, now, and in the future.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="23">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/jb_vec.png" alt="speaker headshot">
+                <p class="speaker-bio">Software Coach, Mentor and Consultant, TDD Trainer <a href="https://tdd.training">tdd.training</a></p>
+              </div>
+              <p class="whoname"><em>Unlocking the Awesome Power of Refactoring</em></p>
+              <p class="speaker">Many programmers get stuck when they try to learn evolutionary design, particularly the refactoring part of it. It never seems to get easier, it never seems to go faster, and so it always seems safer to rip things apart and write them again. If you or someone you know feels stuck like this, then let's talk about why that happens and what to do about it. I'm pretty sure that will also provide a nice starting point for larger discussions about our work as programmers, how evolutionary design (TDD, refactoring) fits in, and anything else that we feel vaguely interested in talking about. My brain will be open.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="24">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/gwen_150x150.png" alt="speaker headshot">
+                <p class="speaker-bio">Chief Product Officer @ Stealth Startup, ex-Engineering Leader @ Confluent, Author of <a href="https://www.amazon.com/Kafka-Definitive-Real-Time-Stream-Processing/dp/1491936169">Kafka: The Definitive Guide</a></p>
+              </div>
+              <p class="whoname"><em>Beyond Microservices: Streams, State and Scalability</em></p>
+              <p class="speaker">Microservices have been a popular architecture choice for at least 5 years by now. Over these years we've adopted microservices architectures to ever growing set of use-cases and different development and deployment strategies. Lessons were learned and our ability to design, develop, deploy and operate microservices has improved. This presentation will give an opinionated view of how microservices evolved in the last few years, based on experience gained while working with companies using Apache Kafka to update their application architecture. We'll discuss the rise of API gateways, service mesh, state management and serverless architectures - what works well, and in which cases. We'll show real-world examples of how applications become more resilient and scalable when new patterns are introduced, and make sure to include caveats - because patterns are all about using them in the right context.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="25">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/raisin_150x150.png" alt="speaker headshot">
+                <p class="speaker-bio">Senior Director of Engineering @ Google</p>
+              </div>
+              <p class="whoname"><em>Engineering Management: The Missing Manual</em></p>
+              <p class="speaker">Managing engineers isn't hard once you have the missing instruction manual. In this talk, Dave will explain why people act the way they do and how you can navigate common (and uncommon) management situations with a few basic principles.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="27">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/kent.png" alt="speaker headshot">
+                <p class="speaker-bio">Creator of Extreme Programming and TDD, Author of <a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530">TDD by Example</a> and <a href="https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658">Extreme Programming Explained</a></p>
+              </div>
+              <p class="whoname"><em>Extreme Programming — 25 Years Later</em></p>
+              <p class="speaker">Kent Beck invented Extreme Programming. In this session, he'll share what he got right, what he got wrong, and what he's still working on.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="28">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/hanselman.png" alt="speaker headshot">
+                <p class="speaker-bio">Principal Community Architect for Web Platform @ Microsoft, Blogger, Podcaster</p>
+              </div>
+              <p class="whoname"><em>Building Careers with Empathy</em></p>
+              <p class="speaker">In this session, Scott Hanselman will share his career journey from a programmer to a Lead .NET Program Manager at Microsoft. Expect some (unusual) advice on skills and practices you need to succeed.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="container">
+        <section class="wrapper speech tickets align-center" data-remodal-id="29">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <div class="row">
+            <section class="12u">
+              <div><img class="headshot" src="images/allenvector.png" alt="speaker headshot">
+                <p class="speaker-bio">Principal @ Hollub Associates Ltd, Pluralsight Author, Author of <a href="https://www.oreilly.com/library/view/design-patterns-in/9781491935828/">Design Patterns in the Real World</a> course</p>
+              </div>
+              <p class="whoname"><em>26 Heuristics for Effective Software Development</em></p>
+              <p class="speaker">In this talk, you’ll learn how to leverage Allen Holub’s 26 rules of thumb to create a highly effective software organization. You’ll learn how to infuse real agility (as compared to “Agile”) into your organization.</p>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="wrapper workshops align-center" id="workshops-container">
+      <div class="container">
+        <header>
+          <h1>
+                        Power Workshops <i class="separator fa fa-ellipsis-v"> </i> Day II, 9 Dec </h1>
+          <h2> </h2>
+          <p><em>Our instructors are here to deliver full-day practical workshops. Choose one that you like more:</em></p>
+        </header>
+        <div class="row" id="FUNCTIONAL">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 1/10 }  </strong><strong> Domain Modeling Made Functional </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">fp</span> <span class="tag">patterns</span> <span class="tag">domain-driven design</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>Functional programming can be an excellent approach to designing decoupled, reusable systems with a rich domain model. This workshop will show you why and how. <p>You'll learn the core concepts of FP, and how to apply them to crafting domain logic, capturing business rules, designing business workflows, error handling, and much more, including:</p> <ul class="awsm"><li>Introduction to functional programming</li><li>Functions and types</li><li>Composition as the fundamental principle</li><li>Overview of DDD principles</li><li>The importance of bounded contexts</li><li>Onion/Hexagonal architecture and how this works with functional programming</li><li>Modeling requirements with algebraic types</li><li>Modeling constraints, states, and workflows</li><li>Keeping IO at the edges</li><li>Handling domain errors</li><li>Composing complex functions</li><li>Evolving the domain</li><li>Dealing with changes in requirements</li></ul><p>Note: We will be using F# as our development language. The principles will be applicable to other languages. No experience with F# needed.</p><p>Note: this workshop runs from 9:00 until 16:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/scott_vec.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/scottwlaschin" aria-label="Follow Scott Wlaschin"><i class="fab fa-twitter" aria-hidden></i></a><b> Scott Wlaschin</b>
+                  <div class="who"><strong>Software Architect, F# Trainer, Author of <a href="https://pragprog.com/book/swdddf/domain-modeling-made-functional">Domain Modeling Made Functional</a></strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="DDD">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 2/10 }  </strong><strong> Domain-Driven Design: Theory and Practice </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">domain-driven design</span> <span class="tag">architecture</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>Understand the concepts of DDD but feeling overwhelmed to implement? Feeling overwhelmed by complex examples and can't connect how to implement DDD in your project? Looking for more concrete guidance on the concepts and principles of DDD and want to learn how to connect it to real-world code? If this sounds familiar, then this workshop is for you. <b>We cover both the theory and patterns of Domain-Driven Design, and connect it to code with hands-on examples in .NET 6</b>. The described concepts will be applicable to other languages and platforms. In this workshop, you'll learn:</p> <ul class="awsm"><li>Where DDD fits in to software delivery and what business problems it addresses</li><li>When to use DDD and when not to use it</li><li>How to craft and enforce a ubiquitous language</li><li>The fundamental modeling building blocks</li><li>The role of refactoring in shaping and reshaping our model</li><li>How to define bounded contexts and microservices</li><li>Realizing a pragmatic implementation with .NET</li><li>...and much more!</li></ul><p>Note: We will be using .NET as our development platform. The principles will be applicable to other languages and platforms.</p><p>Note: this workshop runs from 14:00 until 20:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/jimbo.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/jbogard" aria-label="Follow Jimmy Bogard"><i class="fab fa-twitter" aria-hidden></i></a><b> Jimmy Bogard</b>
+                  <div class="who"><strong>Chief Architect @ Headspring, Microsoft MVP, Creator of <a href="https://github.com/AutoMapper/AutoMapper">AutoMapper</a></strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="JPILO">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 3/10 }  </strong><strong> Pragmatic Refactoring Towards Better Architecture </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">clean code</span> <span class="tag">code design</span> <span class="tag">refactoring</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>Are you struggling with your codebase which causes problems like <b>poor maintenance, unreadability, performance, and poor testability</b>? After this workshop, you will be ready to identify and repair architectural and code root causes of those issues using proven patterns and techniques from Domain-Driven Design, Test-Driven Development, Object-Oriented Programming, and modularization. During code exercises, we will walk through solutions to issues like: <ul class="awsm"><li>What to do with a “God Classes”?</li><li>Modules/classes with huge coupling and with overload of business logic</li><li>Mismatch between the code model and the business model of the reality</li><li>How to repair data inconsistency?</li><li>Inefficient reads from my database?</li><li>No clear boundaries in my codebase, how to introduce some?</li><li>... and much more!</li></ul><p>The workshop will start with code that represents a huge legacy system that some of us have to work with on a daily basis. We will gradually refactor it and not only introduce patterns like <b>CQRS, aggregates, policies, and parallel change</b>, but also walk through how to talk about refactoring, technical debt, and how to sell our ideas to management. </p><p>Note: The course is for developers able to code and complete exercises in Java, C#, or PHP.</p><p>Note: this workshop runs from 14:00 until 20:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/pilo.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/JakubPilimon" aria-label="Follow Jakub Pilimon"><i class="fab fa-twitter" aria-hidden></i></a><b> Jakub Pilimon</b>
+                  <div class="who"><strong>Principal Technologist @ VMWare, Trainer @ Bottega IT Minds, DZone's Most-Valuable Blogger</strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="JBRAINS">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 4/10 }  </strong><strong> Surviving Legacy Code </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">evolutionary design</span> <span class="tag">legacy code</span> <span class="tag">clean code</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>We all have legacy code – profitable code that we’re afraid to change. Rewrite or refactor? How to crack the chicken-and-egg problem (I need to write tests in order to refactor, and I need to refactor in order to write tests)? What to do when we're already behind the schedule? We need a way to learn how to work with legacy safely, correctly, and quickly. That’s what Surviving Legacy Code is about. <p>In this workshop, you'll be working on a diabolical-but-fun code base and practicing different refactoring and testing techniques – from basic to advanced ones. <b>Learned techniques will eventually help you improve your production codebase – safely and quickly enough.</b></p> <p>Note: this workshop runs from 11:00 until 17:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/jb_vec.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/jbrains" aria-label="Follow J.B. Rainsberger"><i class="fab fa-twitter" aria-hidden></i></a><b> J.B. Rainsberger</b>
+                  <div class="who"><strong>Software Coach, Mentor and Consultant, TDD Trainer <a href="https://tdd.training">tdd.training</a></strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="VENKAT">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 5/10 }  </strong><strong> Software Design By Practice </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">code design</span> <span class="tag">architecture</span> <span class="tag">patterns</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>The goal of this intensive, hands-on workshop, is to <strong>deepen your understanding of SOLID and other core software design principles and patterns</strong>. You'll be practicing those concepts under different constraints and requirements, devising elegant lightweight design, writing code, and discussing the tradeoffs. <p>Come experience the evolution of ideas into clean code by way of incremental development!</p><p>Note: this workshop runs from 9:00 until 16:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/venk_vec.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/venkat_s" aria-label="Follow Venkat Subramaniam"><i class="fab fa-twitter" aria-hidden></i></a><b> Venkat Subramaniam</b>
+                  <div class="who"><strong>Founder @ Agile Developer, Author of <a href="https://www.amazon.com/Practices-Agile-Developer-Pragmatic-Bookshelf/dp/097451408X/">Practices of an Agile Developer</a>, <a href="https://www.amazon.com/Programming-Concurrency-JVM-Mastering-Synchronization-ebook/dp/B00A32NZEI/">Programming Concurrency on the JVM</a>, <a href="https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/">Functional Programming in Java</a></strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="DNEAL">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 6/10 }  </strong><strong> Practical Leadership for Software Developers </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">leadership</span> <span class="tag">teamwork</span> <span class="tag">mentoring</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>We all have an opportunity every day to make a postive impact on folks around us. These are often called "soft skills," but they can be some of the hardest to learn! We could call them "people skills," "essential skills," or "core skills." But, how about "<b>SKILLS OF AWESOMENESS</b>?" Yes, what we all need is more ways we can be awesome to each other, and awesome together. You'll learn: <ul class="fa-ul"><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Why leadership and awesomeness skills matter to everyone</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to become a better leader</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to run effective meetings</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to deal with conflict and find consensus</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to get better at listening and communication</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to encourage and motivate others</li></ul></p><p>Through a series of practical exercises, we will discover and discuss the most important and relevant topics you want to cover, so that you can get the most value out of this workshop! The workshop is led by David Neal – #1 speaker of 2020.</p><p>Note: this workshop runs from 9:00 until 16:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/dneal.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/reverentgeek" aria-label="Follow David Neal"><i class="fab fa-twitter" aria-hidden></i></a><b> David Neal</b>
+                  <div class="who"><strong>Principal Developer Evangelist @ Pluralsight, Microsoft MVP</strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="CLEAN_PRAG">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 7/10 }  </strong><strong> Clean and Pragmatic Architecture </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">clean architecture</span> <span class="tag">patterns</span> <span class="tag">java</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>In this workshop, through code examples, hands-on exercises, and discussions you'll learn how to design a clean and pragmatic architecture. The topics include: <ul class="awsm"><li>Layered Architecture: strict and relaxed variants</li><li>Onion Architecture (aka Clean, Hexagonal, Ports-and-Adapters, Universal)</li><li>Controllers: typical design options with tradeoffs</li><li>Entities: techniques and best practices for modeling expressive entities</li><li>Domain Services: how to keep them small, what is the domain logic?</li><li>Facade vs. Application Service (DDD): a pragmatic evolutionary design strategy</li><li>DTOs: enemy structures and when to keep them out of our domain</li><li>Entity/DTO mapping: Best practices, pitfalls of automatic mappers</li><li>Dependency Inversion Principle: stopping external APIs from polluting our domain</li><li>Repositories: designing a domain-friendly search DSL</li><li>Domain Events: mainstream best practices</li><li>CQRS: separating read/write models</li><li>...and much more!</li></ul><p>This workshop uses Java as a reference language.</p><p>Note: this workshop runs from 8:00 until 16:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/viktor_small.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/VictorRentea" aria-label="Follow Victor Rentea"><i class="fab fa-twitter" aria-hidden></i></a><b> Victor Rentea</b>
+                  <div class="who"><strong>Software Craftsman, Java Champion and Trainer</strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="AGILE_ARCHITECTURE">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 8/10 }  </strong><strong> Architecture with Agility </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">software architecture</span> <span class="tag">agility</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>Every system has an architecture, whether accidental or intentional, and regardless of whether it was put in place by a nominated architect or whether it emerged from the decisions and discussions of a team. All too often the focus of what is often described as architecture is centred around a specific set of platform technologies, which forms only one part of the set of concerns an architecture should. And all too often architecture is seen as a separate concern from development process, whereas the two are intertwined — what you build is influenced by how you build it, and vice versa. The course covers a wide range of topics through a number of practical exercises, with plenty of time dedicated to group discussion:</p><ul class="awsm"><li>The relationship between development process and architecture<li>The roles and failure modes of testing, modelling and technology platforms<li>Different architectural styles and design patterns<li>How to transform product vision into architecture<li>Future-proofing your architecture, and accounting for uncertainty<li>How to ground your architecture and avoid overdesign<li>...and much more!</li></ul><p>Note: this workshop runs from 9:00 until 16:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/kevie.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/undefined" aria-label="Follow Kevlin Henney"><i class="fab fa-twitter" aria-hidden></i></a><b> Kevlin Henney</b>
+                  <div class="who"><strong>Consultant, Trainer, Writer, Author of 97 Things Every Programmer Should Know</strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="MODUL">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 9/10 }  </strong><strong> Microservices, Modular Monoliths, and Event-Driven Systems </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">backend architecture</span> <span class="tag">microservices</span> <span class="tag">modularity</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>In this workshop, I’ll take you through three different styles of enterprise service architecture: modular monoliths, distributed synchronous systems, and event-driven systems. Together, we will design a non-trivial backend system and find out the strengths and weaknesses of each architectural approach. We will discuss the typical mistakes and problems developers face during service architecture design and how to solve them. You will learn how to choose the best architecture style for your project, and how to design hybrid solutions, leveraging the best parts of each architecture style. Topics include:<ul class="awsm"><li>Understanding the main styles of service and backend architecture</li><li>Microservies or monoliths? Is there a middle ground?</li><li>How to improve monoliths with modularity; Intro to Modular Monoliths</li><li>How and when to split the system into services with REST/RPC</li><li>How and when to become event-driven and fully async</li><li>How to design non-trivial backend and service architecture</li><li>How to avoid common errors in designing backend and service architectures</li><li>How to use C4 model to communicate your architecture</li><li>...and much more!</li></ul><p><strong>This workshop covers fundamental concepts, relevant to all programming platforms and languages; developers and architects with different backgrounds can attend.</strong> </p><p>Note: this workshop runs from 9:00 until 16:00. <b><a href='#tickets-container'>Buy</a></b></p></p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/jnb_vec.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/jnabrdalik" aria-label="Follow Jakub Nabrdalik"><i class="fab fa-twitter" aria-hidden></i></a><b> Jakub Nabrdalik</b>
+                  <div class="who"><strong>Solution Architect, Developer and Mentor at Bottega IT Minds, ex-Head of Software Development</strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="row" id="ALLEN">
+          <section class="feature 12u 12u$(small) align-left">
+            <h3><strong>{ 10/10 }  </strong><strong> Building an Incremental Architecture </strong><em> (limited seats)</em></h3>
+            <h5> </h5><span class="tag sold">SOLD OUT </span>&nbsp;<span class="tag">software architecture</span> <span class="tag">systems design</span>
+          </section>
+        </div>
+        <div class="row">
+          <section class="feature 8u 12u$(medium) 12u$(small) align-left">
+            <p>You can’t simultaneously fight your code and be Agile—it slows you down too much. Your code’s design must evolve incrementally along with your understanding of the product. In this workshop, you’ll learn <b>everything you need to create highly adaptable designs</b> literally as you implement them. Along the way, you’ll also experience Event Storming and other Domain-Driven Design techniques.<h3>You’ll learn:</h3><ul class="fa-ul"><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to design a system that can evolve incrementally</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>SOLDIER principles (Simple, Obvious, Lightweight, Domain focused, Independent, Essential, Refactorable)</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Architectural patterns appropriate for incremental development</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to create strictly-isolated highly decoupled subsystems</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Domain-focused architectures (including DDD)</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to use the domain to maintain system coherence as the architecture grows</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>How to identify key abstractions, bounded contexts, entities, aggregates.</li></ul></p><p>In all, you’ll learn how to build a coherent and highly maintainable system and architecture that can easily accommodate changing requirements and grow incrementally as the system evolves.</p><p>Note: this workshop runs from 14:00 until 19:00. <b><a href='#tickets-container'>Buy</a></b></p> </p>
+            <h3 style="margin: 0">Instructor   </h3>
+            <table>
+              <tr>
+                <td style="vertical-align:middle; padding: 1em; width: 120px"><img class="lazy headshot" style="width: 100px" data-src="images/allenvector.png" alt="speaker headshot"></td>
+                <td style="vertical-align:middle"><a class="follow-speaker" href="https://twitter.com/allenholub" aria-label="Follow Allen Holub"><i class="fab fa-twitter" aria-hidden></i></a><b> Allen Holub</b>
+                  <div class="who"><strong>Principal @ Hollub Associates Ltd, Pluralsight Author, Author of <a href="https://www.oreilly.com/library/view/design-patterns-in/9781491935828/">Design Patterns in the Real World</a> course</strong></div>
+                </td>
+              </tr>
+            </table>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="wrapper style1 tickets align-center" id="tickets-container">
+      <div class="container">
+        <header>
+          <h1>Tickets</h1>
+          <h2></h2>
+          <p>The price will increase as the conference approaches. Seats are limited.</p>
+        </header>
+        <div class="row">
+          <section class="tick feature 12u 12u$(medium) 12u$(small)">
+            <div class="row">
+              <section class="4u 12u$(small)" ng-repeat="product in event.pricing.packages | packages">
+                <h3 class="product" ng-class="{'attention' : product.attention, 'fade-attention': !product.attention}"><span style="font-weight: bolder">{{product.name}}</span><br><span><span ng-if="product.attention">🚀 </span><span class="fa-layers fa-fw fa-5x best" ng-if="product.attention"><i class="fas fa-certificate" style="color:#ffffff"></i><i class="fas fa-certificate" style="color:#e2333f" data-fa-transform="shrink-1"></i><span class="fa-layers-text fa-inverse" data-fa-transform="shrink-11.5 rotate--30">BEST</span></span><span>{{product.price}} </span>
+                    <strike>{{product.price + product.extra}}</strike>€<br><br><a class="button" ng-if="!product.sold_out &amp;&amp; event.status == 'on_sale'" href="https://devternity.com/registration/" style="padding: 0 0.5em">Buy Now</a><a class="button disabled" ng-if="product.sold_out" style="padding: 0 0.5em; border: 0">Sold out</a><br><br>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{product.capacity}}%"></div>
+                    </div></span></h3>
+              </section>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="wrapper" id="support-container">
+      <div class="container">
+        <header class="align-center">
+          <h1>Sponsors            </h1>
+          <h2> </h2>
+          <p><em>We are partnering with amazing companies that have continuous learning and innovation in their DNA.</em></p><br>
+          <div class="row align-center">
+            <section class="12u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://jetbrains.com"><img class="lazy" style="height: 60px" data-src="images/jetbrains.png" alt="undefined logo"></a><br><i class="fa fa-star" aria-hidden="true" style="color: orange"></i><i class="fa fa-star" aria-hidden="true" style="color: orange"></i><i class="fa fa-star" aria-hidden="true" style="color: orange"></i><em> Gold Sponsor  (since 2022)</em>
+              <p><p>At JetBrains, code is our passion. Ever since we started, back in 2000, we have strived to make the strongest, most effective developer tools on earth. By automating routine checks and corrections, our tools speed up production, freeing developers to grow, discover and create.</p></p>
+            </section><br>
+          </div><br>
+          <div class="row align-center">
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.logitech.com"><img class="lazy" style="height: 60px" data-src="images/logi.png" alt="Sponsor logo"></a><br><em> Sponsor  (since 2022)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.codecentric.de"><img class="lazy" style="height: 60px" data-src="images/codecentric.png" alt="Sponsor logo"></a><br><em> Sponsor  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.google.com"><img class="lazy" style="height: 60px" data-src="images/google.png" alt="Partner logo"></a><br><em> Partner  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.digitalocean.com"><img class="lazy" style="height: 60px" data-src="images/digitalocean.png" alt="Partner logo"></a><br><em> Partner  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.slack.com"><img class="lazy" style="height: 60px" data-src="images/slack.png" alt="Partner logo"></a><br><em> Partner  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.coursera.com"><img class="lazy" style="height: 60px" data-src="images/coursera.png" alt="Partner logo"></a><br><em> Partner  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://www.medium.com"><img class="lazy" style="height: 60px" data-src="images/medium.png" alt="Partner logo"></a><br><em> Partner  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://pulumi.com"><img class="lazy" style="height: 60px" data-src="images/pulumi.jpg" alt="Partner logo"></a><br><em> Partner  (since 2019)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://gitlab.com/"><img class="lazy" style="height: 60px" data-src="images/gitlab.jpeg" alt="Gitlab logo"></a><br><em> Gitlab  (since 2021)</em>
+              <p></p>
+            </section>
+            <section class="3u 12u$(medium)"><a target="_blank" rel="noopener nofollow" alt="Sponsor link" href="https://swissdevjobs.ch/"><img class="lazy" style="height: 60px" data-src="images/swissdev.png" alt="SwissDev Jobs logo"></a><br><em> SwissDev Jobs  (since 2021)</em>
+              <p></p>
+            </section><br>
+          </div>
+        </header>
+      </div>
+    </section>
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <section class="12u"></section>
+        </div>
+        <div class="row">
+          <section class="6u 12u$(small)">
+            <h3>Organisers</h3>
+            <p><i class="fa fa-heart" style="color: red" aria-hidden="true"></i> DevTernity is organised with love and care by software developers from Latvia, Estonia, and Netherlands. </p>
+          </section>
+          <section class="6u 12u$(small)">
+            <h3>Contacts</h3>
+            <ul class="icons">
+              <li><a href="https://twitter.com/devternity" aria-label="twitter link"><i class="fab fa-twitter" aria-hidden>                   </i></a></li>
+              <li><a href="https://www.facebook.com/devternity" aria-label="facebook link"><i class="fab fa-facebook" aria-hidden>                   </i></a></li>
+              <li><a href="https://www.linkedin.com/groups/8371335/" aria-label="linkedin link"><i class="fab fa-linkedin" aria-hidden>                   </i></a></li>
+              <li><a href="https://www.instagram.com/devternity" aria-label="instagram link"><i class="fab fa-instagram" aria-hidden>                   </i></a></li>
+              <li><a href="https://youtube.com/c/DevTernity" aria-label="youtube link"><i class="fab fa-youtube" aria-hidden>                   </i></a></li>
+              <li><a href="https://en.wikipedia.org/wiki/DevTernity_Conference" aria-label="wikipedia-w link"><i class="fab fa-wikipedia-w" aria-hidden>                   </i></a></li>
+              <li> <a href="mailto:hello@devternity.com" aria-label="email link"><i class="far fa-envelope" aria-hidden></i></a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <p class="copyright">&copy; DevTernity OÜ, 14226860, Mõisavahe tn 38-129 Tartu, Estonia. <br>All rights reserved.</p>
+      <p class="align-center" ng-if="embedded"><br><a class="button big pulse" href="https://devternity.com">Visit website</a></p>
+    </footer>
+    <script defer data-domain="devternity.com" data-api="/pla/event" src="/pla/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.6.0/lazyload.min.js"></script>
+    <script>
+      window.lazyLoad = new LazyLoad({
+          elements_selector: 'img.lazy',
+          treshold: 500
+      });
+    </script>
+    <script>document.getElementById("video").play();</script>
+  </body>
+</html>
