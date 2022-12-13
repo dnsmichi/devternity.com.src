@@ -893,7 +893,7 @@
             <div class="row">
               <section class="4u 12u$(small)" ng-repeat="product in event.pricing.packages | packages">
                 <h3 class="product" ng-class="{'attention' : product.attention, 'fade-attention': !product.attention}"><span style="font-weight: bolder">{{product.name}}</span><br><span><span ng-if="product.attention">🚀 </span><span class="fa-layers fa-fw fa-5x best" ng-if="product.attention"><i class="fas fa-certificate" style="color:#ffffff"></i><i class="fas fa-certificate" style="color:#e2333f" data-fa-transform="shrink-1"></i><span class="fa-layers-text fa-inverse" data-fa-transform="shrink-11.5 rotate--30">BEST</span></span><span>{{product.price}} </span>
-                    <strike>{{product.price + product.extra}}</strike>€<br><br><a class="button" ng-if="!product.sold_out &amp;&amp; event.status == 'on_sale'" href="https://devternity.com/registration/" style="padding: 0 0.5em">Buy Now</a><a class="button disabled" ng-if="product.sold_out" style="padding: 0 0.5em; border: 0">Sold out</a><br><br>
+                    <strike>{{product.price + product.extra}}</strike>€<br><br><a class="button" ng-if="!product.sold_out &amp;&amp; event.status == 'on_sale'" href="https://registration.devternity.com" style="padding: 0 0.5em">Buy Now</a><a class="button disabled" ng-if="product.sold_out" style="padding: 0 0.5em; border: 0">Sold out</a><br><br>
                     <div class="progress">
                       <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{product.capacity}}%"></div>
                     </div></span></h3>
