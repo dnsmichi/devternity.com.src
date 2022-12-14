@@ -10,7 +10,7 @@
     "city": "Online",
     "venue_name": "GMT (London Time)",
     "contactEmail": "hello@devternity.com",
-    "status": "on_sale",
+    "status": "sold_out",
     "country": "Latvia",
     "classes": "extended_event",
     "time": "8:00",
