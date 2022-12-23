@@ -52,7 +52,7 @@
     },
     "sponsorship": {
       "gold": {
-        "title": "Gold Sponsor",
+        "title": "Gold Partner",
         "stars": 3,
         "sponsorsPerLine": 1,
         "sponsors": [
@@ -61,22 +61,22 @@
             "since": "2022",
             "link": "https://jetbrains.com",
             "info": "<p>At JetBrains, code is our passion. Ever since we started, back in 2000, we have strived to make the strongest, most effective developer tools on earth. By automating routine checks and corrections, our tools speed up production, freeing developers to grow, discover and create.</p>"
-          }    
+          }          
         ]
       },
       "silver": {
-        "title": "Sponsor",
+        "title": "Partner",
         "stars": 0,
         "sponsorsPerLine": 4,
         "sponsors": [
           {
-            "title": "Sponsor",
+            "title": "Partner",
             "logo": "logi.png",
             "since": "2022",
             "link": "https://www.logitech.com"
           },
           {
-            "title": "Sponsor",
+            "title": "Partner",
             "logo": "codecentric.png",
             "since": "2019",
             "link": "https://www.codecentric.de"
@@ -122,12 +122,6 @@
             "logo": "gitlab.jpeg",
             "since": "2021",
             "link": "https://gitlab.com/"
-          },
-          {
-            "title": "SwissDev Jobs",
-            "logo": "swissdev.png",
-            "since": "2021",
-            "link": "https://swissdevjobs.ch/"
           }
         ]
       }
