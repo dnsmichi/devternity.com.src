@@ -32,7 +32,7 @@
           "includesMainDay": true,
           "capacity": 90
         },
-        "Masterclass": {
+        "Masterclass Only": {
           "price": 399,
           "extra": 200,
           "includesWorkshop": true,
